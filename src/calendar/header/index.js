@@ -45,7 +45,8 @@ class CalendarHeader extends Component {
     /** Replace default month and year title with custom one. the function receive a date as parameter. */
     renderHeader: PropTypes.any,
     /** Provide aria-level for calendar heading for proper accessibility when used with web (react-native-web) */
-    webAriaLevel: PropTypes.number
+    webAriaLevel: PropTypes.number,
+    renderBottomBar: PropTypes.any,
   };
 
   static defaultProps = {
@@ -226,6 +227,7 @@ class CalendarHeader extends Component {
           {this.renderArrow('right')}
         </View>
         {this.renderDayNames()}
+        {this.props.renderBottomBar()}
       </View>
     );
   }
