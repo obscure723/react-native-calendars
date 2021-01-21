@@ -193,7 +193,8 @@ class WeekCalendar extends Component {
       firstDay
     });
     return (
-      <View testID={this.props.testID} style={[allowShadow && this.style.containerShadow, !hideDayNames && {paddingBottom: 6}]}>
+      <View testID={this.props.testID} style={[allowShadow && this.style.containerShadow, !hideDayNames && { paddingBottom: 6 }]}>
+        {this.props.renderHeader && this.props.renderHeader()}
         {!hideDayNames &&
           <>
           <View style={[this.style.week, {marginTop: 12, marginBottom: -2}]}>
